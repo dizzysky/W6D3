@@ -1,0 +1,51 @@
+  [1m[35m (564.1ms)[0m  [1m[35mCREATE DATABASE "FirstRoutes_development" ENCODING = 'unicode'[0m
+  [1m[35m (146.1ms)[0m  [1m[35mCREATE DATABASE "FirstRoutes_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2023-08-02 15:19:23 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sanjid/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sanjid/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.0ms | Allocations: 853)
+Completed 200 OK in 30ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 6644)
+
+
+Started GET "/" for ::1 at 2023-08-02 15:26:08 -0400
+Processing by Rails::WelcomeController#index as */*
+  Rendering /Users/sanjid/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sanjid/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.4ms | Allocations: 491)
+Completed 200 OK in 4ms (Views: 2.9ms | Allocations: 1567)
+
+
+Started GET "/users" for ::1 at 2023-08-02 15:27:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2023-08-02 15:35:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2023-08-02 15:35:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2023-08-02 15:36:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2023-08-02 15:36:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2023-08-02 15:40:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2023-08-02 15:43:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2023-08-02 16:07:37 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 2182)
+
+
