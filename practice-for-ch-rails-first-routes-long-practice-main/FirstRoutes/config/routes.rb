@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # get 'users/', to: 'users#index', as: 'all_users'
 
   resources :users, only: [:index, :create, :show, :update, :destroy]
-  resources :artworks, only: [:index, :create, :show, :update, :destroy]
+  resources :artworks, only: [:create, :show, :update, :destroy]
   resources :artwork_shares, only: [:create, :destroy]
 
   resources :users do
