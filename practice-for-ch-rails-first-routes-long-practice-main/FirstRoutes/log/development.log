@@ -428,3 +428,81 @@ Migrating to CreateUser (20230802210918)
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "sanjid"], ["email", "email@gmail.com"], ["created_at", "2023-08-02 21:31:39.759589"], ["updated_at", "2023-08-02 21:31:39.759589"]]
   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users" for ::1 at 2023-08-02 17:40:39 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/users" for ::1 at 2023-08-02 17:41:16 -0400
+Processing by UsersController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 104)
+
+
+Started GET "/users" for ::1 at 2023-08-02 17:43:17 -0400
+Processing by UsersController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 202)
+
+
+Started GET "/users" for ::1 at 2023-08-02 17:43:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/users" for ::1 at 2023-08-02 17:44:25 -0400
+Processing by UsersController#index as */*
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 202)
+
+
+Started GET "/users" for ::1 at 2023-08-02 17:44:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/users" for ::1 at 2023-08-02 17:49:01 -0400
+Processing by UsersController#index as */*
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 202)
+
+
+Started POST "/users" for ::1 at 2023-08-02 17:49:25 -0400
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms | Allocations: 883)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/users" for ::1 at 2023-08-02 17:50:05 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"sanjid", "email"=>"dsanjid@gmail.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "sanjid"], ["email", "dsanjid@gmail.com"], ["created_at", "2023-08-02 21:50:05.132410"], ["updated_at", "2023-08-02 21:50:05.132410"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 7.5ms | Allocations: 15209)
+
+
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/users" for ::1 at 2023-08-03 10:09:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"sanjid"}}
+Completed 422 Unprocessable Entity in 22ms (ActiveRecord: 5.0ms | Allocations: 16292)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email can't be blank):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/users" for ::1 at 2023-08-03 10:10:54 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"sanjid"}}
+Completed 422 Unprocessable Entity in 8ms (Views: 1.0ms | ActiveRecord: 2.0ms | Allocations: 3364)
+
+
