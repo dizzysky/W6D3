@@ -939,3 +939,68 @@ Processing by ArtworkSharesController#destroy as */*
 Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 2244)
 
 
+Started GET "/users/1/artworks" for ::1 at 2023-08-03 16:48:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtworksController#index as */*
+  Parameters: {"artwork_shares"=>{"artwork_id"=>3, "viewer_id"=>2}, "user_id"=>"1", "artwork"=>{}}
+  [1m[36mArtwork Load (1.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/artworks_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 5.6ms | Allocations: 13768)
+
+
+Started GET "/users/3/artworks" for ::1 at 2023-08-03 16:49:01 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"artwork_shares"=>{"artwork_id"=>3, "viewer_id"=>2}, "user_id"=>"3", "artwork"=>{}}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/artworks_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1170)
+
+
+Started GET "/users/4/artworks" for ::1 at 2023-08-03 16:49:14 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"artwork_shares"=>{"artwork_id"=>3, "viewer_id"=>2}, "user_id"=>"4", "artwork"=>{}}
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/artworks_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1085)
+
+
+Started GET "/users/4/artworks" for ::1 at 2023-08-03 17:04:13 -0400
+  
+SyntaxError (/Users/sanjid/app_academy/classwork/W6D3/practice-for-ch-rails-first-routes-long-practice-main/FirstRoutes/app/controllers/artworks_controller.rb:55: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/artworks_controller.rb:55: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/artworks_controller.rb:55: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users/4/artworks" for ::1 at 2023-08-03 17:04:30 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"artwork_shares"=>{"artwork_id"=>3, "viewer_id"=>2}, "user_id"=>"4", "artwork"=>{}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:5:in `index'
+Completed 404 Not Found in 19ms (ActiveRecord: 18.1ms | Allocations: 5644)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=4):
+  
+app/controllers/artworks_controller.rb:5:in `index'
+Started GET "/users/3/artworks" for ::1 at 2023-08-03 17:04:44 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"artwork_shares"=>{"artwork_id"=>3, "viewer_id"=>2}, "user_id"=>"3", "artwork"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.2ms | Allocations: 12107)
+
+
+  
+NoMethodError (undefined method `artworks_for_user_id' for Artwork:Class):
+  
+app/controllers/artworks_controller.rb:6:in `index'
+Started GET "/users/3/artworks" for ::1 at 2023-08-03 17:15:40 -0400
+Processing by ArtworksController#index as */*
+  Parameters: {"artwork_shares"=>{"artwork_id"=>3, "viewer_id"=>2}, "user_id"=>"3", "artwork"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:5:in `index'
+  [1m[36mArtwork Load (5.3ms)[0m  [1m[34mSELECT DISTINCT "artworks".* FROM "artworks" LEFT OUTER JOIN "artwork_shares" ON "artwork_shares"."artwork_id" = "artworks"."id" WHERE ((artworks.artist_id = '3') OR (artwork_shares.viewer_id = '3'))[0m
+  ↳ app/controllers/artworks_controller.rb:7:in `index'
+Completed 200 OK in 37ms (Views: 21.1ms | ActiveRecord: 16.7ms | Allocations: 13557)
+
+
